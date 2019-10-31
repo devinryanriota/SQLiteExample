@@ -42,6 +42,7 @@ public class DBHelper extends SQLiteOpenHelper {
         values.put("nim", nim);
         values.put("name", name);
         values.put("gpa", gpa);
+        values.put("email", name+nim+"@mail.com");
 
         // students = nama table
         // values = isi insertnya
@@ -73,6 +74,9 @@ public class DBHelper extends SQLiteOpenHelper {
 
             // getDouble soalnya gpa bentuknya double
             double gpa = result.getDouble(2);
+            
+            //get email hardcode
+            String email = result.getString(3);
 
             // bikin modelnya
             Student student = new Student(nim, name, gpa);
